@@ -16,10 +16,17 @@ module.exports = {
         }
       },
       {
-        test: /\.html$/,
+        test: /\.scss$/,
         use: [
           {
-            loader: 'html-loader'
+            loader: 'style-loader' // Creates Styles nodes from JS Strings
+          },
+          {
+            loader: 'css-loader', // Translates CSS into CommonJS
+            options: {
+              sourceMap: true,
+              minimize: true
+            }
           }
         ]
       }
